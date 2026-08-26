@@ -1,16 +1,34 @@
 import math
 
-method = ["load"]
-load_type = ["motors"]
-voltage_type = 380
-safety_factor = 25
+method = {
+    "1":"load",
+    "2":"current"
+}
+
+load_type = {
+    "1":"motor",
+    "2":"welder",
+    "3":"resistive"
+}
+
+voltage_type = {
+    "1":220,
+    "2":380
+}
+
+safety_factor = {
+    "welder":100,
+    "motor":25,
+    "resistive":25
+}
+
 power_factor = 0.9
 readme = f"""
     AmpGuard is circuit breaker size calculator 
-    based on {method} method
+    based on {list(method.values())} method
     for now this app can calculated for a few limitation
-    load - {load_type}
-    voltage - {voltage_type} VAC
+    load - {list(load_type.values())}
+    voltage - {list(voltage_type.values())} VAC
     safety factor - {safety_factor} %
     power factor - {power_factor}
 """
