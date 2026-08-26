@@ -1,6 +1,6 @@
 import math
 
-method = ["current", "load"]
+method = ["load"]
 load_type = ["motors"]
 voltage_type = 380
 safety_factor = 25
@@ -18,8 +18,9 @@ readme = f"""
 while True:
     print(readme)
 
-    method_type = input("method calculate, type 'current' or 'load':")
+    method_type = input(f"method calculate, type {method}:")
     load_power = input("What is the power load of your motor (watts)?")
     result = (int(load_power)/(math.sqrt(3)*voltage_type*power_factor))*(1+(safety_factor/100))
     print(f"result ampere for your load is : {result} A")
+    break
 
