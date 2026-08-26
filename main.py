@@ -39,15 +39,20 @@ def calculate_load(load, voltage,power_factor, safety_factor):
     """
     return (load/(math.sqrt(3)*voltage*power_factor))*(1+(safety_factor/100))
 
+def calculate_current(current,safety_factor):
+    """
+    calculate ampere using current method
+    """
+    return (current*(1+(safety_factor/100)))
+
 while True:
     print(readme)
-
-    load_power = int(input("What is the power load of your motor in (watts)?"))
+    load_power = input("What is the power load of your motor in (watts)?")
     result = calculate_load(
-        load=load_power, 
-        voltage=voltage_type, 
+        load=int(load_power), 
+        voltage=voltage_type["2"], 
         power_factor=power_factor,
-        safety_factor=safety_factor
+        safety_factor=safety_factor["motor"]
         )
     print(f"result ampere for your load is : {result} A")
     break
