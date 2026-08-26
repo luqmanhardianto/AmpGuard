@@ -15,12 +15,22 @@ readme = f"""
     power factor - {power_factor}
 """
 
+def calculate_load(load, voltage,power_factor, safety_factor):
+    """
+    calculate ampere using load method
+    """
+    return (load/(math.sqrt(3)*voltage*power_factor))*(1+(safety_factor/100))
+
 while True:
     print(readme)
 
-    method_type = input(f"method calculate, type {method}:")
-    load_power = input("What is the power load of your motor (watts)?")
-    result = (int(load_power)/(math.sqrt(3)*voltage_type*power_factor))*(1+(safety_factor/100))
+    load_power = int(input("What is the power load of your motor in (watts)?"))
+    result = calculate_load(
+        load=load_power, 
+        voltage=voltage_type, 
+        power_factor=power_factor,
+        safety_factor=safety_factor
+        )
     print(f"result ampere for your load is : {result} A")
     break
 
