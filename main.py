@@ -1,13 +1,13 @@
 import math
 
-method = {
-    "1":"load",
-    "2":"current"
+method_type = {
+    "1":"current",
+    "2":"load"
 }
 
 load_type = {
     "1":"motor",
-    "2":"welder",
+    "2":"welding",
     "3":"resistive"
 }
 
@@ -22,14 +22,15 @@ safety_factor = {
     "resistive":25
 }
 
-power_factor = 0.9
+power_factor = 0.75
+
 readme = f"""
     AmpGuard is circuit breaker size calculator 
-    based on {list(method.values())} method
+    based on {list(method_type.values())} method
     for now this app can calculated for a few limitation
     load - {list(load_type.values())}
     voltage - {list(voltage_type.values())} VAC
-    safety factor - {safety_factor} %
+    safety factor - {safety_factor} % dependent on load type
     power factor - {power_factor}
 """
 
@@ -47,13 +48,22 @@ def calculate_current(current,safety_factor):
 
 while True:
     print(readme)
-    load_power = input("What is the power load of your motor in (watts)?")
+
+    method_type_list = """"""
+    for list in method_type:
+        method_type_list += f"{list} - {method_type[list]}\n"
+    print(method_type_list)
+    method = input("chose base calculator method :")
+
+    load_power = int(input("What is the power load of your motor in (watts)?"))
+    
     result = calculate_load(
-        load=int(load_power), 
+        load=load_power, 
         voltage=voltage_type["2"], 
         power_factor=power_factor,
         safety_factor=safety_factor["motor"]
         )
-    print(f"result ampere for your load is : {result} A")
+    result2 = load_power/voltage_type["2"]
+    print(f"result ampere for your load is : {result} A or {result2} A")
     break
 
