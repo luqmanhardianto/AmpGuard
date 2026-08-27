@@ -73,7 +73,7 @@ while True:
         power_factor=power_factor,
         safety_factor=safety_factor["motor"]
         )
-    result2 = load_input/voltage_type["2"]
-    print(f"result ampere for your load is : {result} A or {result2} A")
+    
+    print(f"result ampere for your load is : {result} A")
     break
 
