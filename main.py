@@ -11,6 +11,11 @@ load_type = {
     "3":"resistive"
 }
 
+unit_type ={
+    "current":"A",
+    "load":"Watt"
+}
+
 voltage_type = {
     "1":220,
     "2":380
@@ -60,15 +65,15 @@ while True:
     print(load_type_list)
     load = input("choose load type :")
 
-    load_power = int(input("What is the power load of your motor in (watts)?"))
-    
+    load_input = int(input(f"What is the {method_type[method]} of your {load_type[load]} in ({unit_type[method_type[method]]}) :"))
+
     result = calculate_load(
-        load=load_power, 
+        load=load_input, 
         voltage=voltage_type["2"], 
         power_factor=power_factor,
         safety_factor=safety_factor["motor"]
         )
-    result2 = load_power/voltage_type["2"]
+    result2 = load_input/voltage_type["2"]
     print(f"result ampere for your load is : {result} A or {result2} A")
     break
 
