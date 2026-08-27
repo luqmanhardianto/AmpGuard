@@ -22,7 +22,7 @@ voltage_type = {
 }
 
 safety_factor = {
-    "welder":100,
+    "welding":100,
     "motor":25,
     "resistive":25
 }
