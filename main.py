@@ -1,10 +1,5 @@
 import math
 
-method_type = {
-    "1":"current",
-    "2":"load"
-}
-
 load_type = {
     "1":"motor",
     "2":"welding",
