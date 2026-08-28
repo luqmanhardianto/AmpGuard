@@ -1,10 +1,6 @@
 import math
 
-load_type = {
-    "1":"motor",
-    "2":"welding",
-    "3":"resistive"
-}
+
 
 unit_type ={
     "current":"A",
