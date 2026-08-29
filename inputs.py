@@ -18,3 +18,9 @@ def ask_current():
         question="enter current",
         unit="A"
     )
+
+def ask_power():
+    return ask_number(
+        question="enter power",
+        unit="Watt"
+    )
