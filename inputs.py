@@ -30,3 +30,5 @@ def collect_current_inputs():
         "load_type":ask_load_types(),
         "current":ask_current()
     }
+
+print(collect_current_inputs())
