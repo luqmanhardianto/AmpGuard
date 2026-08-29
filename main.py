@@ -2,21 +2,7 @@ import math
 
 
 
-unit_type ={
-    "current":"A",
-    "load":"Watt"
-}
 
-voltage_type = {
-    "1":220,
-    "2":380
-}
-
-safety_factor = {
-    "welding":100,
-    "motor":25,
-    "resistive":25
-}
 
 power_factor = 0.75
 
