@@ -1,9 +1,5 @@
 import math
 
-
-
-
-
 power_factor = 0.75
 
 readme = f"""
