@@ -31,4 +31,11 @@ def collect_current_inputs():
         "current":ask_current()
     }
 
+def collect_load_inputs():
+    return {
+        "load_type":ask_load_types(),
+        "voltage_type":ask_voltage_types(),
+        "power":ask_power()
+    }
+
 print(collect_current_inputs())
