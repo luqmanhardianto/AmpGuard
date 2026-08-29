@@ -20,6 +20,13 @@ def ask_choice(question,options):
         except (ValueError, KeyError):
             print("invalid choice. try again.")
 
+def ask_number(question, unit=""):
+    while True:
+        try:
+            value = float(input(f"{question} {unit}: "))
+            return value
+        except ValueError:
+            print("please enter a valid number.")
 
 while True:
     print(readme)
@@ -32,7 +39,12 @@ while True:
         question="choose load type:",
         options=menus.LAOD_TYPE
     )
+
+    current = ask_number(
+        question="enter current",
+        unit="A"
+    )
     
-    print(f"result ampere for your load is : {method, load} A")
+    print(f"result ampere for your load is : {method, load, current} A")
     break
 
