@@ -38,4 +38,4 @@ def collect_load_inputs():
         "power":ask_power()
     }
 
-print(collect_current_inputs())
+print(collect_load_inputs())
