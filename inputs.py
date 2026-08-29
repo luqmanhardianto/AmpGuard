@@ -6,3 +6,9 @@ def ask_load_types():
         "choose load type:",
         LOAD_TYPE
     )
+
+def ask_current():
+    return ask_number(
+        question="enter current",
+        unit="A"
+    )
