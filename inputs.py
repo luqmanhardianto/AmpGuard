@@ -24,3 +24,9 @@ def ask_power():
         question="enter power",
         unit="Watt"
     )
+
+def collect_current_inputs():
+    return {
+        "load_type":ask_load_types(),
+        "current":ask_current()
+    }
