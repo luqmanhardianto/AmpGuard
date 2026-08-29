@@ -1,6 +1,12 @@
+import calculator
 CALCULATOR_METHOD = {
     "1":"current",
     "2":"load"
+}
+
+CALCULATORS = {
+    "current":calculator.current_calculator,
+    "load":calculator.laod_calculator
 }
 
 LAOD_TYPE = {
