@@ -1,4 +1,3 @@
-import calculator
 import menus
 
 power_factor = 0.75
@@ -35,16 +34,8 @@ while True:
         options=menus.CALCULATOR_METHOD
         )
 
-    load = ask_choice(
-        question="choose load type:",
-        options=menus.LAOD_TYPE
-    )
-
-    current = ask_number(
-        question="enter current",
-        unit="A"
-    )
+    calculator = menus.CALCULATORS[method]
     
-    print(f"result ampere for your load is : {method, load, current} A")
+    print(f"result ampere for your load is : {calculator} A")
     break
 
