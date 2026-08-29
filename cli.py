@@ -15,6 +15,11 @@ def ask_number(question, unit=""):
     while True:
         try:
             value = float(input(f"{question} {unit}: "))
+
+            if value <= 0 :
+                print("value must be greater than 0.")
+                continue
+            
             return value
         except ValueError:
             print("please enter a valid number.")
