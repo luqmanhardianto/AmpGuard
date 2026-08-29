@@ -3,8 +3,14 @@ from menus import LOAD_TYPE, VOLTAGE_TYPE
 
 def ask_load_types():
     return ask_choice(
-        "choose load type:",
-        LOAD_TYPE
+        question="choose load type:",
+        options=LOAD_TYPE
+    )
+
+def ask_voltage_types():
+    return ask_choice(
+        question="choose voltage type",
+        options=VOLTAGE_TYPE
     )
 
 def ask_current():
