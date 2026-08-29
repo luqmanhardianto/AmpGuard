@@ -13,5 +13,8 @@ while True:
 
     get_current = inputs.ask_current()
     print(get_current)
+
+    get_voltage = inputs.ask_voltage_types()
+    print(get_voltage)
     break
 
