@@ -27,7 +27,12 @@ while True:
         question="choose base calculator method:",
         options=menus.CALCULATOR_METHOD
         )
+
+    load = ask_choice(
+        question="choose load type:",
+        options=menus.LAOD_TYPE
+    )
     
-    print(f"result ampere for your load is : {method} A")
+    print(f"result ampere for your load is : {method, load} A")
     break
 
