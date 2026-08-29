@@ -15,11 +15,6 @@ LAOD_TYPE = {
     "3":"resistive"
 }
 
-UNIT_TYPE ={
-    "current":"A",
-    "load":"Watt"
-}
-
 VOLTAGE_TYPE = {
     "1":220,
     "2":380
