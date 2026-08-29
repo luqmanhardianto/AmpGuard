@@ -10,5 +10,8 @@ while True:
     print(readme)
     load_type = inputs.ask_load_types()
     print(load_type)
+
+    get_current = inputs.ask_current()
+    print(get_current)
     break
 
