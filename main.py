@@ -16,5 +16,8 @@ while True:
 
     get_voltage = inputs.ask_voltage_types()
     print(get_voltage)
+
+    get_power = inputs.ask_power()
+    print(get_power)
     break
 
