@@ -1,4 +1,6 @@
 import inputs
+from cli import ask_choice
+from menus import CALCULATOR_METHOD
 
 power_factor = 0.75
 
@@ -8,16 +10,11 @@ readme = f"""
 
 while True:
     print(readme)
-    load_type = inputs.ask_load_types()
-    print(load_type)
 
-    get_current = inputs.ask_current()
-    print(get_current)
+    method = ask_choice(
+        question="choose base calculator method:",
+        options=CALCULATOR_METHOD
+    )
 
-    get_voltage = inputs.ask_voltage_types()
-    print(get_voltage)
-
-    get_power = inputs.ask_power()
-    print(get_power)
+    print(method)
     break
-

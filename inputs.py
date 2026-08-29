@@ -37,5 +37,3 @@ def collect_load_inputs():
         "voltage_type":ask_voltage_types(),
         "power":ask_power()
     }
-
-print(collect_load_inputs())
