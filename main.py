@@ -1,4 +1,4 @@
-from cli import ask_choice
+from cli import ask_choice, display_result
 from config import CALCULATOR_METHOD
 from inputs import collect_current_inputs, collect_load_inputs
 from calculator import calculate_current, calculate_load
@@ -29,4 +29,10 @@ while True:
     data = collector()
     calculators = CALCULATORS[method]
     result = calculators(data)
+
+    display_result(
+        answer="circuit breaker ampere rating is :",
+        result=result,
+        unit="A"
+    )
     break
