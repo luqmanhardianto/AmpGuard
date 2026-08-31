@@ -1,10 +1,15 @@
 from cli import ask_choice
 from menus import CALCULATOR_METHOD
 from inputs import collect_current_inputs, collect_load_inputs
+from calculator import calculate_current
 
 INPUT_COLLECTORS = {
     "current":collect_current_inputs,
     "load":collect_load_inputs
+}
+
+CALCULATE = {
+    "current":calculate_current,
 }
 
 power_factor = 0.75
@@ -23,5 +28,6 @@ while True:
 
     collector = INPUT_COLLECTORS[method]
     data = collector()
-    print(data)
+    calculate = CALCULATE[method]
+    result = calculate(data)
     break
