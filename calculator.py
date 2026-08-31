@@ -32,12 +32,12 @@ def calculate_load(collect_input):
     margin_of_safety = SAFETY_FACTOR[load_type]
 
     # 220v calculation
-    if voltage_type == VOLTAGE_TYPE["1"]:
-        result = (power/(voltage_type*(power_factor/100)))*(1+(margin_of_safety/100))
+    if voltage_type == "single_phase":
+        result = (power/(VOLTAGE[voltage_type]*(power_factor/100)))*(1+(margin_of_safety/100))
 
     # 380v calculation
-    elif voltage_type == VOLTAGE_TYPE["2"]:
-        result = (power/(sqrt(3)*voltage_type*(power_factor/100)))*(1+(margin_of_safety/100))
+    elif voltage_type == "three_phase":
+        result = (power/(sqrt(3)*VOLTAGE[voltage_type]*(power_factor/100)))*(1+(margin_of_safety/100))
     return display_result(
         answer="circuit breaker size is:",
         result=result,
