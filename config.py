@@ -16,3 +16,13 @@ VOLTAGE_TYPE = {
     "2":"three_phase"
 }
 
+SAFETY_FACTOR = {
+    "welding":100,
+    "motor":25,
+    "resistive":25
+}
+
+VOLTAGE = {
+    "single_phase":220,
+    "three_phase":380
+}

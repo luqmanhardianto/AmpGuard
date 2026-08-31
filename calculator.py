@@ -1,17 +1,8 @@
-from config import VOLTAGE_TYPE
+from config import VOLTAGE_TYPE, VOLTAGE, SAFETY_FACTOR
 from cli import display_result
 from math import sqrt
 
-SAFETY_FACTOR = {
-    "welding":100,
-    "motor":25,
-    "resistive":25
-}
 
-VOLTAGE = {
-    "single_phase":220,
-    "three_phase":380
-}
 
 def calculate_current(collect_input):
     load_type =collect_input["load_type"]
