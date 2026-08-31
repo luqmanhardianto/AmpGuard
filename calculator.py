@@ -18,11 +18,7 @@ def calculate_current(collect_input):
     margin_of_safety = SAFETY_FACTOR[load_type]
     current = collect_input["current"]
     result = current * (1+(margin_of_safety/100))
-    return  display_result(
-        answer="circuit breaker size is:",
-        result=result,
-        unit="A"
-        )
+    return  result
 
 def calculate_load(collect_input):
     load_type = collect_input["load_type"]
