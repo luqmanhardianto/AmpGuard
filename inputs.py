@@ -25,6 +25,12 @@ def ask_power():
         unit="Watt"
     )
 
+def ask_power_factor():
+    return ask_number(
+        question="enter power factor",
+        unit="0-100%"
+    )
+
 def collect_current_inputs():
     return {
         "load_type":ask_load_types(),
@@ -35,5 +41,6 @@ def collect_load_inputs():
     return {
         "load_type":ask_load_types(),
         "voltage_type":ask_voltage_types(),
-        "power":ask_power()
+        "power":ask_power(),
+        "power_factor":ask_power_factor()
     }
