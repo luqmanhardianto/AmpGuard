@@ -38,8 +38,4 @@ def calculate_load(collect_input):
     # 380v calculation
     elif voltage_type == "three_phase":
         result = (power/(sqrt(3)*VOLTAGE[voltage_type]*power_factor))*(1+(margin_of_safety/100))
-    return display_result(
-        answer="circuit breaker size is:",
-        result=result,
-        unit="A"
-        )
+    return result
