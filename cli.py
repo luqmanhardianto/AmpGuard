@@ -5,10 +5,11 @@ def ask_choice(question,options):
         print(f"{index} - {label}")
 
     while True:
-        try:
-            choice = input("> ")
+        choice = input("> ").strip()
+
+        if choice in options:
             return options[choice]
-        except (ValueError, KeyError):
+        else:
             print("invalid choice. try again.")
 
 def ask_number(question, unit="", min_val=None, max_val=None):
