@@ -16,12 +16,16 @@ def calculate_load(collect_input):
     power = collect_input["power"]
     power_factor = collect_input["power_factor"]
     margin_of_safety = SAFETY_FACTOR[load_type]
-
     # 220v calculation
     if voltage_type == "single_phase":
-        result = (power/(VOLTAGE_VALUE[voltage_type]*power_factor))*(1+(margin_of_safety/100))
+        result = (power/(VOLTAGE_VALUE[voltage_type]*power_factor))
+
 
     # 380v calculation
     elif voltage_type == "three_phase":
-        result = (power/(sqrt(3)*VOLTAGE_VALUE[voltage_type]*power_factor))*(1+(margin_of_safety/100))
-    return result
+        result = (power/(sqrt(3)*VOLTAGE_VALUE[voltage_type]*power_factor))
+
+    return apply_safety_factor(result,margin_of_safety)
+
+def apply_safety_factor(current, safety_factor):
+    return current (1+(safety_factor/100))
