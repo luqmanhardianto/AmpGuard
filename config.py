@@ -1,3 +1,5 @@
+from calculator import calculate_current, calculate_load
+from inputs import collect_current_inputs, collect_load_inputs
 
 CALCULATOR_METHOD = {
     "1":"current",
@@ -25,4 +27,14 @@ SAFETY_FACTOR = {
 VOLTAGE = {
     "single_phase":220,
     "three_phase":380
+}
+
+INPUT_COLLECTORS = {
+    "current":collect_current_inputs,
+    "load":collect_load_inputs
+}
+
+CALCULATORS = {
+    "current":calculate_current,
+    "load":calculate_load
 }
