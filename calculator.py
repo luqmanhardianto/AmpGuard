@@ -1,4 +1,4 @@
-from config import SAFETY_FACTOR, VOLTAGE_TYPE
+from config import VOLTAGE_TYPE
 from cli import display_result
 from math import sqrt
 
