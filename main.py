@@ -1,5 +1,5 @@
 from cli import ask_choice
-from menus import CALCULATOR_METHOD
+from config import CALCULATOR_METHOD
 from inputs import collect_current_inputs, collect_load_inputs
 from calculator import calculate_current, calculate_load
 
