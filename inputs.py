@@ -28,7 +28,9 @@ def ask_power():
 def ask_power_factor():
     return ask_number(
         question="enter power factor",
-        unit="0-100%"
+        unit="0-100%",
+        min_val=0,
+        max_val=100
     )
 
 def collect_current_inputs():
