@@ -1,7 +1,19 @@
 from config import VOLTAGE_VALUE, SAFETY_FACTOR
 from math import sqrt
 
+def apply_safety_factor(current, safety_factor):
+    return current *(1+(safety_factor/100))
 
+def calculate_single_phase_current(power,voltage,power_factor):
+    return power / (voltage * power_factor)
+
+def calculate_three_phase_current(power,voltage,power_factor):
+    return power / (sqrt(3) * voltage * power_factor)
+
+LOAD_CALCULATORS={
+    "single_phase":calculate_single_phase_current,
+    "three_phase":calculate_single_phase_current
+}
 
 def calculate_current(collect_input):
     load_type =collect_input["load_type"]
@@ -17,26 +29,19 @@ def calculate_load(collect_input):
     voltage_type = collect_input["voltage_type"]
     power = collect_input["power"]
     power_factor = collect_input["power_factor"]
-    margin_of_safety = SAFETY_FACTOR[load_type]
-    # 220v calculation
-    if voltage_type == "single_phase":
-        result = (power/(VOLTAGE_VALUE[voltage_type]*power_factor))
 
+    safety_factor = SAFETY_FACTOR[load_type]
+    voltage = VOLTAGE_VALUE[voltage_type]
 
-    # 380v calculation
-    elif voltage_type == "three_phase":
-        result = (power/(sqrt(3)*VOLTAGE_VALUE[voltage_type]*power_factor))
+    calculators = LOAD_CALCULATORS[voltage_type]
+
+    current = calculators(
+        power=power,
+        voltage=voltage,
+        power_factor=power_factor
+    )
 
     return apply_safety_factor(
-        current=result,
-        safety_factor=margin_of_safety
+        current=current,
+        safety_factor=safety_factor
         )
-
-def apply_safety_factor(current, safety_factor):
-    return current *(1+(safety_factor/100))
-
-def calculate_single_phase_current(power,voltage,power_factor):
-    return power / (voltage * power_factor)
-
-def calculate_three_phase_current(power,voltage,power_factor):
-    return power / (sqrt(3) * voltage * power_factor)
