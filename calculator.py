@@ -32,10 +32,3 @@ def calculate_load(collect_input):
         result=result,
         unit="A"
         )
-
-calculate_load({
-    "load_type":"motor",
-    "voltage_type":380,
-    "power":2200,
-    "power_factor":100
-    })
