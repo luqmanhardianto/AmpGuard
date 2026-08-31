@@ -8,7 +8,7 @@ INPUT_COLLECTORS = {
     "load":collect_load_inputs
 }
 
-CALCULATE = {
+CALCULATORS = {
     "current":calculate_current,
     "load":calculate_load
 }
@@ -29,6 +29,6 @@ while True:
 
     collector = INPUT_COLLECTORS[method]
     data = collector()
-    calculate = CALCULATE[method]
-    result = calculate(data)
+    calculators = CALCULATORS[method]
+    result = calculators(data)
     break
