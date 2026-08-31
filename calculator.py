@@ -12,7 +12,7 @@ def calculate_three_phase_current(power,voltage,power_factor):
 
 LOAD_CALCULATORS={
     "single_phase":calculate_single_phase_current,
-    "three_phase":calculate_single_phase_current
+    "three_phase":calculate_three_phase_current
 }
 
 def calculate_current(collect_input):
