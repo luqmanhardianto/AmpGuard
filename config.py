@@ -16,8 +16,3 @@ VOLTAGE_TYPE = {
     "2":380
 }
 
-SAFETY_FACTOR = {
-    "welding":100,
-    "motor":25,
-    "resistive":25
-}
