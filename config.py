@@ -12,7 +12,7 @@ LOAD_TYPE = {
 }
 
 VOLTAGE_TYPE = {
-    "1":220,
-    "2":380
+    "1":"single_phase",
+    "2":"three_phase"
 }
 
