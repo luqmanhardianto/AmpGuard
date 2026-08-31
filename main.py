@@ -1,7 +1,17 @@
 from cli import ask_choice, display_result
-from config import CALCULATOR_METHOD, INPUT_COLLECTORS, CALCULATORS
+from config import CALCULATOR_METHOD
+from calculator import calculate_current, calculate_load
+from inputs import collect_current_inputs, collect_load_inputs
 
+INPUT_COLLECTORS = {
+    "current":collect_current_inputs,
+    "load":collect_load_inputs
+}
 
+CALCULATORS = {
+    "current":calculate_current,
+    "load":calculate_load
+}
 
 readme = """
     AmpGuard is circuit breaker size calculator 
