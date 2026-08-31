@@ -33,4 +33,4 @@ def calculate_load(collect_input):
         )
 
 def apply_safety_factor(current, safety_factor):
-    return current (1+(safety_factor/100))
+    return current *(1+(safety_factor/100))
