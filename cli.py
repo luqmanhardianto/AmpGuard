@@ -24,5 +24,5 @@ def ask_number(question, unit=""):
         except ValueError:
             print("please enter a valid number.")
 
-def display_result():
-    return
+def display_result(answer, result,unit=""):
+    return print(f"\n{answer} : {result} {unit}")
