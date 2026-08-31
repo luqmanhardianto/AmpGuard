@@ -1,5 +1,5 @@
 from cli import ask_choice, ask_number
-from menus import LOAD_TYPE, VOLTAGE_TYPE
+from config import LOAD_TYPE, VOLTAGE_TYPE
 
 def ask_load_types():
     return ask_choice(
@@ -28,9 +28,9 @@ def ask_power():
 def ask_power_factor():
     return ask_number(
         question="enter power factor",
-        unit="0-100%",
+        unit="0.0-1.0",
         min_val=0,
-        max_val=100
+        max_val=1
     )
 
 def collect_current_inputs():
