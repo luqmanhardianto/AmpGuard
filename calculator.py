@@ -10,3 +10,9 @@ def calculate_current(collect_input):
         result=result,
         unit="A"
         )
+
+def calculate_load(collect_input):
+    load_type = collect_input["load-type"]
+    voltage_type = collect_input{"voltage_type"}
+    power = collect_input["power"]
+    return print(f"{load_type} {voltage_type} {power}")
