@@ -7,8 +7,10 @@ def calculate_current(collect_input):
     load_type =collect_input["load_type"]
     margin_of_safety = SAFETY_FACTOR[load_type]
     current = collect_input["current"]
-    result = current * (1+(margin_of_safety/100))
-    return  result
+    return  apply_safety_factor(
+        current=current,
+        safety_factor=margin_of_safety
+        )
 
 def calculate_load(collect_input):
     load_type = collect_input["load_type"]
@@ -25,7 +27,10 @@ def calculate_load(collect_input):
     elif voltage_type == "three_phase":
         result = (power/(sqrt(3)*VOLTAGE_VALUE[voltage_type]*power_factor))
 
-    return apply_safety_factor(result,margin_of_safety)
+    return apply_safety_factor(
+        current=result,
+        safety_factor=margin_of_safety
+        )
 
 def apply_safety_factor(current, safety_factor):
     return current (1+(safety_factor/100))
