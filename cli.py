@@ -25,4 +25,10 @@ def ask_number(question, unit=""):
             print("please enter a valid number.")
 
 def display_result(answer, result,unit=""):
-    return print(f"\n{answer} : {result} {unit}")
+    return print(f"\n{answer} {result} {unit}")
+
+display_result(
+    answer="circuit breaker size is :",
+    result=32,
+    unit="A"
+)
