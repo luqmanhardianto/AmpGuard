@@ -13,8 +13,6 @@ CALCULATORS = {
     "load":calculate_load
 }
 
-power_factor = 0.75
-
 readme = f"""
     AmpGuard is circuit breaker size calculator 
     """
