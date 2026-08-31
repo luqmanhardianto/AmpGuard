@@ -8,6 +8,11 @@ SAFETY_FACTOR = {
     "resistive":25
 }
 
+VOLTAGE = {
+    "single_phase":220,
+    "three_phase":380
+}
+
 def calculate_current(collect_input):
     load_type =collect_input["load_type"]
     margin_of_safety = SAFETY_FACTOR[load_type]
