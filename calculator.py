@@ -14,13 +14,10 @@ LOAD_CALCULATORS={
     "three_phase":calculate_three_phase_current
 }
 
-def calculate_current(collect_input):
-    load_type =collect_input["load_type"]
-    margin_of_safety = SAFETY_FACTOR[load_type]
-    current = collect_input["current"]
+def calculate_current_method(input):
     return  apply_safety_factor(
-        current=current,
-        safety_factor=margin_of_safety
+        current=input["current"],
+        safety_factor=SAFETY_FACTOR[input["load_type"]]
         )
 
 def calculate_load(collect_input):

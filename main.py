@@ -1,6 +1,6 @@
 from cli import ask_choice, display_result
 from config import CALCULATOR_METHOD
-from calculator import calculate_current, calculate_load
+from calculator import calculate_current_method, calculate_load
 from inputs import collect_current_inputs, collect_load_inputs
 
 INPUT_COLLECTORS = {
@@ -9,7 +9,7 @@ INPUT_COLLECTORS = {
 }
 
 CALCULATORS = {
-    "current":calculate_current,
+    "current":calculate_current_method,
     "load":calculate_load
 }
 
