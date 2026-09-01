@@ -16,9 +16,9 @@ VOLTAGE_TYPE = {
 }
 
 SAFETY_FACTOR = {
-    "welding":100,
-    "motor":25,
-    "resistive":25
+    "welding":2,
+    "motor":1.25,
+    "resistive":1.25
 }
 
 VOLTAGE_VALUE = {

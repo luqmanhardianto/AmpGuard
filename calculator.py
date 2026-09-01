@@ -1,7 +1,7 @@
 from config import VOLTAGE_VALUE, SAFETY_FACTOR, THREE_PHASE_FACTOR
 
 def apply_safety_factor(current, safety_factor):
-    return current *(1+(safety_factor/100))
+    return current * safety_factor
 
 def calculate_single_phase_current(power,voltage,power_factor):
     return power / (voltage * power_factor)
