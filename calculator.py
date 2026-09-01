@@ -20,24 +20,17 @@ def calculate_current_method(input):
         safety_factor=SAFETY_FACTOR[input["load_type"]]
         )
 
-def calculate_load(collect_input):
-    load_type = collect_input["load_type"]
-    voltage_type = collect_input["voltage_type"]
-    power = collect_input["power"]
-    power_factor = collect_input["power_factor"]
+def calculate_load_method(input):
 
-    safety_factor = SAFETY_FACTOR[load_type]
-    voltage = VOLTAGE_VALUE[voltage_type]
-
-    calculators = LOAD_CALCULATORS[voltage_type]
+    calculators = LOAD_CALCULATORS[input["voltage_type"]]
 
     current = calculators(
-        power=power,
-        voltage=voltage,
-        power_factor=power_factor
+        power=input["power"],
+        voltage=VOLTAGE_VALUE[input["voltage_type"]],
+        power_factor=input["power_factor"]
     )
 
     return apply_safety_factor(
         current=current,
-        safety_factor=safety_factor
+        safety_factor=SAFETY_FACTOR[input["load_type"]]
         )
