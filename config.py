@@ -1,3 +1,4 @@
+from math import sqrt
 CALCULATOR_METHOD = {
     "1":"current",
     "2":"load"
@@ -25,3 +26,4 @@ VOLTAGE_VALUE = {
     "three_phase":380
 }
 
+THREE_PHASE_FACTOR = sqrt(3)

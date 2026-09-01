@@ -1,5 +1,4 @@
-from config import VOLTAGE_VALUE, SAFETY_FACTOR
-from math import sqrt
+from config import VOLTAGE_VALUE, SAFETY_FACTOR, THREE_PHASE_FACTOR
 
 def apply_safety_factor(current, safety_factor):
     return current *(1+(safety_factor/100))
@@ -8,7 +7,7 @@ def calculate_single_phase_current(power,voltage,power_factor):
     return power / (voltage * power_factor)
 
 def calculate_three_phase_current(power,voltage,power_factor):
-    return power / (sqrt(3) * voltage * power_factor)
+    return power / (THREE_PHASE_FACTOR * voltage * power_factor)
 
 LOAD_CALCULATORS={
     "single_phase":calculate_single_phase_current,
