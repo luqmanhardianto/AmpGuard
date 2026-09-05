@@ -16,13 +16,15 @@ def ask_voltage_types():
 def ask_current():
     return ask_number(
         question="enter current",
-        unit="A"
+        unit="A",
+        min_val=0
     )
 
 def ask_power():
     return ask_number(
         question="enter power",
-        unit="Watt"
+        unit="Watt",
+        min_val=0
     )
 
 def ask_power_factor():
