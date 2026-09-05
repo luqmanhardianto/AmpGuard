@@ -17,7 +17,7 @@ readme = """
     AmpGuard is circuit breaker size calculator 
     """
 
-while True:
+def main():
     print(readme)
 
     method = ask_choice(
@@ -35,4 +35,6 @@ while True:
         result=result,
         unit="A"
     )
-    break
+
+if __name__ == "__main__":
+    main()
