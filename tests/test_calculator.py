@@ -2,7 +2,8 @@ import unittest
 
 from calculator import (
     apply_safety_factor,
-    calculate_single_phase_current
+    calculate_single_phase_current,
+    calculate_three_phase_current
 )
 
 class TestSafetyFactor(unittest.TestCase):
@@ -31,6 +32,16 @@ class TestSinglePhaseCurrent(unittest.TestCase):
         )
 
         self.assertEqual(result, 10)
+
+class TestThreePhaseCurrent(unittest.TestCase):
+    def test_three_phase_current(self):
+        result = calculate_three_phase_current(
+            power=3800,
+            voltage=380,
+            power_factor=1
+        )
+
+        self.assertAlmostEqual(result, 5.774, places=3)
 
 if __name__ == "__main__":
     unittest.main()
