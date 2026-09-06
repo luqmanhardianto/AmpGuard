@@ -27,8 +27,8 @@ def main():
 
     collector = INPUT_COLLECTORS[method]
     data = collector()
-    calculators = CALCULATORS[method]
-    result = calculators(data)
+    calculator = CALCULATORS[method]
+    result = calculator(data)
 
     display_result(
         answer="circuit breaker ampere rating is :",
