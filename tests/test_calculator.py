@@ -1,6 +1,9 @@
 import unittest
 
-from calculator import apply_safety_factor
+from calculator import (
+    apply_safety_factor,
+    calculate_single_phase_current
+)
 
 class TestSafetyFactor(unittest.TestCase):
     def test_motor_safety_factor(self):
@@ -18,6 +21,16 @@ class TestSafetyFactor(unittest.TestCase):
         )
 
         self.assertEqual(result, 20)
+
+class TestSinglePhaseCurrent(unittest.TestCase):
+    def test_single_phase_current(self):
+        result = calculate_single_phase_current(
+            power=2200,
+            voltage=220,
+            power_factor=1
+        )
+
+        self.assertEqual(result, 10)
 
 if __name__ == "__main__":
     unittest.main()
