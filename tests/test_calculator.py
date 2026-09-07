@@ -4,8 +4,22 @@ from calculator import (
     apply_safety_factor,
     calculate_single_phase_current,
     calculate_three_phase_current,
-    calculate_current_method
+    calculate_current_method,
+    calculate_load_method
 )
+
+class TestLoadMethod(unittest.TestCase):
+    def test_motor_three_phase(self):
+        inputs = {
+            "load_type":"motor",
+            "voltage_type":"three_phase",
+            "power":7600,
+            "power_factor":1
+        }
+
+        result = calculate_load_method(inputs)
+
+        self.assertAlmostEqual(result, 14.43, places=2)
 
 class TestCurrentMethod(unittest.TestCase):
     def test_motor_current_method(self):
