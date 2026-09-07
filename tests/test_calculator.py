@@ -3,8 +3,20 @@ import unittest
 from calculator import (
     apply_safety_factor,
     calculate_single_phase_current,
-    calculate_three_phase_current
+    calculate_three_phase_current,
+    calculate_current_method
 )
+
+class TestCurrentMethod(unittest.TestCase):
+    def test_motor_current_method(self):
+        inputs = {
+            "load_type":"motor",
+            "current":10
+        }
+
+        result = calculate_current_method(inputs)
+
+        self.assertEqual(result, 12.5)
 
 class TestSafetyFactor(unittest.TestCase):
     def test_motor_safety_factor(self):
