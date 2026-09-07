@@ -18,6 +18,16 @@ class TestCurrentMethod(unittest.TestCase):
 
         self.assertEqual(result, 12.5)
 
+    def test_welding_current_method(self):
+        inputs = {
+            "load_type":"welding",
+            "current":10
+        }
+
+        result = calculate_current_method(inputs)
+
+        self.assertEqual(result, 20)
+
 class TestSafetyFactor(unittest.TestCase):
     def test_motor_safety_factor(self):
         result = apply_safety_factor(
